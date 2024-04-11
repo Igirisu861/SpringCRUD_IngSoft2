@@ -20,14 +20,18 @@ public class UsuarioCRUDServiceImpl implements UsuarioCRUDService {
 		return userRepository.findAll();
 	}
 	
-	public Usuario findByID(int id) {
-		Optional<Usuario> u = userRepository.findById(id);
-		System.out.println(u.toString());
-		return u.get();
+	public Optional<Usuario> getUsuarioById(Integer id) {
+		return userRepository.findById(id);
 	}
 
 	@Override
 	public void deleteUser(Integer id) {
-		
+		userRepository.deleteById(id);
+	}
+
+	@Override
+	public Usuario crearUsuario(Usuario usuario) {
+		System.out.println("usuario>>>"+usuario.toString());
+		return userRepository.save(usuario);
 	}
 }

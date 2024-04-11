@@ -11,3 +11,5 @@ public class CrudApplication {
 	}
 
 }
+
+//ABRIR DOCKER PRIMERO, CORRER LA IMAGEN Y CORRER ESTO
